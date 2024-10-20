@@ -1,0 +1,52 @@
+[
+    {
+        "id": 1,
+        "title": "Introduction to JSON",
+        "content": "JSON stands for JavaScript Object Notation and is a lightweight data interchange format."
+    },
+    {
+        "id": 2,
+        "title": "Understanding APIs",
+        "content": "APIs allow different software applications to communicate with each other."
+    },
+    {
+        "id": 3,
+        "title": "Getting Started with Python",
+        "content": "Python is a versatile programming language that you can use for web development, data analysis, and more."
+    },
+    {
+        "id": 4,
+        "title": "Exploring Machine Learning",
+        "content": "Machine learning is a branch of artificial intelligence that focuses on building systems that learn from data."
+    },
+    {
+        "id": 5,
+        "title": "Web Development Basics",
+        "content": "Web development involves building and maintaining websites. It can range from creating simple static pages to complex web applications."
+    },
+    {
+        "id": 6,
+        "title": "Introduction to Databases",
+        "content": "Databases are organized collections of data that can be easily accessed, managed, and updated."
+    },
+    {
+        "id": 7,
+        "title": "Understanding Cloud Computing",
+        "content": "Cloud computing provides on-demand computing resources over the internet, allowing for scalable and flexible IT solutions."
+    },
+    {
+        "id": 8,
+        "title": "Basics of Cybersecurity",
+        "content": "Cybersecurity involves protecting computer systems and networks from digital attacks, theft, and damage."
+    },
+    {
+        "id": 9,
+        "title": "Learning JavaScript",
+        "content": "JavaScript is a programming language commonly used to create interactive effects within web browsers."
+    },
+    {
+        "id": 10,
+        "title": "Introduction to Data Science",
+        "content": "Data science combines statistics, data analysis, and machine learning to understand and analyze complex data."
+    }
+]
