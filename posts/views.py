@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from pprint import pprint
 import json
 
@@ -37,7 +37,8 @@ def sample_html_resp_view(requests):
 
 def get_post_by_id(requests, id:int=-1):
     print(f"Requested id -> {id}")
-    if id > 0:
+    total_posts = len(sample_posts)
+    if id > 0 and id < total_posts:
         post = [post for post in sample_posts if post.get('id') == id][0]
         html = f"""
         <div>
@@ -49,4 +50,4 @@ def get_post_by_id(requests, id:int=-1):
         """
         return HttpResponse(html)
     else:
-        return "Pass a valid 'id'"
+        return HttpResponseNotFound("Post not available 🥲")
