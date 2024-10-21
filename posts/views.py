@@ -26,9 +26,27 @@ def sample_html_resp_view(requests):
         html += f"""
         <div>
             <span>
-            <h2> {post.get('id')}.) {post.get('title')} </h2>
+            <a href="/posts/{post.get('id')}">
+                <h2> {post.get('id')}.) {post.get('title')} </h2>
+            </a>
             </span>
             <h4> {post.get('content')} </h4>
         </div>
         """
     return HttpResponse(html)
+
+def get_post_by_id(requests, id:int=-1):
+    print(f"Requested id -> {id}")
+    if id > 0:
+        post = [post for post in sample_posts if post.get('id') == id][0]
+        html = f"""
+        <div>
+            <span>
+            <h2> {post.get('id')}.) {post.get('title')} </h2>
+            </span>
+            <h4> {post.get('content')} </h4>
+        </div>
+        """
+        return HttpResponse(html)
+    else:
+        return "Pass a valid 'id'"
