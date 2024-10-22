@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
-from django.urls import reverse
 from django.shortcuts import render
+from django.urls import reverse
 from pprint import pprint
 import json
 
@@ -11,7 +11,7 @@ sample_posts = json.loads(open(fr"posts\sample_data.json", "r").read())
 
 def simple_view(requests):
     #pprint(requests.__dict__)
-    return HttpResponse("Simple view - 1")
+    return render(requests, "home.html")
 
 
 # Sample view to check if same route used which view will be called first

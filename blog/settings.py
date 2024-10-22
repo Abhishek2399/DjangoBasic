@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'posts', # so that we can use the templates inside this app
 ]
 
 MIDDLEWARE = [
