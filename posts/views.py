@@ -5,13 +5,14 @@ from pprint import pprint
 import json
 
 # keeping sample data ready for temp purpose will be replaced with actual data once database ready
-sample_posts = json.loads(open(fr"posts\sample_data.json", "r").read())
+SAMPLE_POSTS = json.loads(open(fr"posts\sample_data.json", "r").read())
+# SAMPLE_POSTS = []
 
 # Create your views here.
 
 def simple_view(requests):
     #pprint(requests.__dict__)
-    return render(requests, "home.html")
+    return render(requests, fr"posts/home.html", {"project_name" : 'Django Basics', 'posts' : SAMPLE_POSTS})
 
 
 # Sample view to check if same route used which view will be called first
@@ -23,7 +24,7 @@ def simple_view2(requests):
 # sample view to understand how to send HTML response
 def sample_html_resp_view(requests):
     html = ""
-    for post in sample_posts[:5]:
+    for post in SAMPLE_POSTS[:5]:
         html += f"""
         <div>
             <span>
@@ -38,9 +39,9 @@ def sample_html_resp_view(requests):
 
 def get_post_by_id(requests, id:int=-1):
     print(f"Requested id -> {id}")
-    total_posts = len(sample_posts)
+    total_posts = len(SAMPLE_POSTS)
     if id > 0 and id < total_posts:
-        post = [post for post in sample_posts if post.get('id') == id][0]
+        post = [post for post in SAMPLE_POSTS if post.get('id') == id][0]
         html = f"""
         <div>
             <span>
