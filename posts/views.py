@@ -1,5 +1,6 @@
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.urls import reverse
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
 from pprint import pprint
 import json
 
@@ -51,3 +52,8 @@ def get_post_by_id(requests, id:int=-1):
         return HttpResponse(html)
     else:
         return HttpResponseNotFound("Post not available 🥲")
+
+def google_view(requests, id:int=-1):
+    print(f"Redirected to -> {reverse('post_by_id', args=[id])}")
+    redirect_url = reverse('post_by_id', args=[id])
+    return HttpResponseRedirect(redirect_to=redirect_url)
