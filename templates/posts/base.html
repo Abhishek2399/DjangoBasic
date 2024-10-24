@@ -8,11 +8,15 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <!-- DataTables CSS -->
-    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet"> 
+    <!-- CSS -->
+     {% block css %}
+       
+     {% endblock css %}
 </head>
 
 <body>
-    <div class="container mt-4">
+    <div class="container mt-4 background">
         
         <h1 class="mt-5 text-center">{% block page-header %}  {% endblock page-header %}</h1>
         <h3>{{project_name}}</h3>
