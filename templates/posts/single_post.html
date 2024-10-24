@@ -1,0 +1,18 @@
+{% extends 'posts/base.html' %}
+{% block page-header %}
+    Post # {{ post.id }}
+{% endblock page-header %}
+{% block body %}
+<div class="container row justify-content-center">
+    {% if post %}
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{post.title}}</h5>
+          <p class="card-text">{{post.content}}</p>
+          <a href="{% url "home" %}" class="card-link">Home</a>
+        </div>
+      </div>
+    {% endif %}
+
+</div>
+{% endblock body %}
