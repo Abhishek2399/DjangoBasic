@@ -40,19 +40,10 @@ def sample_html_resp_view(requests):
 def get_post_by_id(requests, id:int=-1):
     print(f"Requested id -> {id}")
     total_posts = len(SAMPLE_POSTS)
-    if id > 0 and id < total_posts:
-        post = [post for post in SAMPLE_POSTS if post.get('id') == id][0]
-        html = f"""
-        <div>
-            <span>
-            <h2> {post.get('id')}.) {post.get('title')} </h2>
-            </span>
-            <h4> {post.get('content')} </h4>
-        </div>
-        """
-        return HttpResponse(html)
-    else:
-        return HttpResponseNotFound("Post not available 🥲")
+    post = {}
+    post = [post for post in SAMPLE_POSTS if post.get('id') == id][0]
+    # return HttpResponse(html)
+    return render(requests, fr"posts/single_post.html", {'post' : post})
 
 def google_view(requests, id:int=-1):
     print(f"Redirected to -> {reverse('post_by_id', args=[id])}")
